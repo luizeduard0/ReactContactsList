@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import ListContacts from './ListContacts'
 
+
 class App extends Component {
-  render() {
-    const contacts = [
+
+  state = {
+    contacts: [
       {
         "id": "ryan",
         "name": "Ryan Florence",
@@ -23,10 +25,12 @@ class App extends Component {
         "avatarURL": "http://localhost:5001/tyler.jpg"
       }
     ]
+  }
 
+  render() {
     return (
       <div>
-        <ListContacts contacts={contacts} />
+        <ListContacts contacts={this.state.contacts} />
       </div>
     );
   }
